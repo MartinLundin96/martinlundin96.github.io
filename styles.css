@@ -237,22 +237,21 @@ h2 {
 
 .project-card {
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
   background: var(--white);
   border: 1px solid var(--line);
 }
 
-.project-visual {
+.delve-cover {
   position: relative;
-  min-height: 520px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #182921;
-  color: #eef3ef;
+  padding: 18px;
+  background: #111a19;
+}
+
+.delve-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .project-label {
@@ -267,68 +266,8 @@ h2 {
   text-transform: uppercase;
 }
 
-.game-mark {
-  position: relative;
-  z-index: 2;
-  font-family: "Courier New", monospace;
-  font-size: clamp(3.8rem, 8vw, 6.8rem);
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-shadow: 6px 6px 0 #496a58;
-}
-
-.project-visual > p {
-  position: relative;
-  z-index: 2;
-  margin: 18px 0 0;
-  color: #aabbb1;
-  font-family: "Courier New", monospace;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.pixel-grid {
-  position: absolute;
-  inset: 0;
-  opacity: 0.55;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-.pixel {
-  position: absolute;
-  display: block;
-  background: #63866f;
-  box-shadow: 28px 0 #3e604e, 0 28px #7a9a84, 28px 28px #adc0b2;
-}
-
-.pixel-one {
-  width: 28px;
-  height: 28px;
-  top: 18%;
-  right: 18%;
-}
-
-.pixel-two {
-  width: 14px;
-  height: 14px;
-  bottom: 20%;
-  left: 17%;
-  box-shadow: 14px 0 #3e604e, 0 14px #7a9a84;
-}
-
-.pixel-three {
-  width: 20px;
-  height: 20px;
-  top: 32%;
-  left: 10%;
-  opacity: 0.45;
-}
-
 .project-content {
   padding: clamp(38px, 6vw, 72px);
-  align-self: center;
 }
 
 .project-number {
@@ -349,6 +288,24 @@ h2 {
   letter-spacing: -0.035em;
 }
 
+.delve-intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(40px, 7vw, 90px);
+  align-items: start;
+}
+
+.project-subtitle {
+  max-width: 480px;
+  color: var(--sage-dark) !important;
+  font-weight: 700;
+}
+
+.project-summary p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 .project-content > p:not(.project-number) {
   color: var(--muted);
   line-height: 1.75;
@@ -362,6 +319,113 @@ h2 {
   padding: 26px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+
+.delve-meta {
+  grid-template-columns: 0.8fr 0.65fr 1.55fr;
+  margin: 0 clamp(38px, 6vw, 72px);
+  padding: 27px 0;
+}
+
+.delve-concept {
+  margin-top: clamp(48px, 7vw, 82px);
+  padding: clamp(38px, 6vw, 72px);
+  background: #172720;
+  color: #f3f4ef;
+}
+
+.concept-heading {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(35px, 7vw, 90px);
+  align-items: end;
+  margin-bottom: 36px;
+}
+
+.concept-heading .project-number {
+  color: #a8c5b3;
+}
+
+.concept-heading h4,
+.asset-copy h4 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.concept-heading > p {
+  margin: 0;
+  color: #bac8c0;
+  line-height: 1.75;
+}
+
+.stages-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.delve-assets {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(38px, 7vw, 85px);
+  padding: clamp(48px, 7vw, 82px) clamp(38px, 6vw, 72px);
+  background: #eee9df;
+}
+
+.asset-copy p:last-child {
+  margin-top: 25px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: stretch;
+}
+
+.asset-card {
+  min-height: 168px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 10px 13px;
+  background: #1c2c24;
+  color: #dce7df;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.asset-card img {
+  width: min(100%, 96px);
+  height: 96px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.asset-card.asset-large img {
+  width: min(100%, 145px);
+}
+
+.asset-card figcaption {
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.delve-status {
+  padding: 25px clamp(38px, 6vw, 72px);
+  background: var(--white);
+  border-top: 1px solid var(--line);
 }
 
 .project-meta span,
@@ -522,19 +586,25 @@ footer {
     width: min(78vw, 360px);
   }
 
-  .project-card,
   .about-section,
   .section-heading {
     grid-template-columns: 1fr;
+  }
+
+  .delve-intro,
+  .concept-heading,
+  .delve-assets {
+    grid-template-columns: 1fr;
+  }
+
+  .delve-meta {
+    grid-template-columns: 1fr 1fr;
   }
 
   .about-section {
     gap: 55px;
   }
 
-  .project-visual {
-    min-height: 390px;
-  }
 }
 
 @media (max-width: 580px) {
@@ -577,6 +647,18 @@ footer {
 
   .project-meta {
     grid-template-columns: 1fr;
+  }
+
+  .delve-cover {
+    padding: 8px;
+  }
+
+  .delve-meta {
+    margin-inline: 26px;
+  }
+
+  .asset-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .skills-panel {
